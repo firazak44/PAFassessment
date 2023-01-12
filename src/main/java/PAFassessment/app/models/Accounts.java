@@ -1,10 +1,13 @@
 package PAFassessment.app.models;
 
+import jakarta.json.Json;
+import jakarta.json.JsonObject;
+
 public class Accounts {
     private String account_id;
     private String name;
     private String balance;
-    
+
     public String getAccount_id() {
         return account_id;
     }
@@ -24,5 +27,20 @@ public class Accounts {
         this.balance = balance;
     }
 
+    public JsonObject toJson(){
+        return Json.createObjectBuilder()
+        .add("account_id", account_id)
+        .add("name", name)
+        .add("balance", balance)
+        .build();
+    }
+
+    public static Accounts data(JsonObject doc){
+        final Accounts ac = new Accounts();
+        ac.setAccount_id(doc.getString("account_id"));
+        ac.setName(doc.getString("name"));
+        ac.setBalance(doc.getString("balance"));
+        return ac;
+    }
     
 }

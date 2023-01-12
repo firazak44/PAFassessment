@@ -5,13 +5,26 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import PAFassessment.app.models.Accounts;
+import PAFassessment.app.models.Transactions;
+
 @Controller
 @RequestMapping(path="/transfer")
 public class TxController {
-    
-    // @Autowired
-    // private ;
 
-    // @PostMapping
+    @PostMapping
+    public Accounts transfer(){
+        if(account_id.checkIfError()){
+            return "error";
+        }else{
+            if (Transactions.class(amount)) {
+                
+            } else {
+                
+            }
+        }
+        return "transfer";
+
+    }
 
 }
