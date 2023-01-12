@@ -13,16 +13,16 @@ import PAFassessment.app.models.Transactions;
 public class TxController {
 
     @PostMapping
-    public Accounts transfer(){
-        if(account_id.checkIfError()){
-            return "error";
-        }else{
-            if (Transactions.class(amount)) {
+    public String transfer(){
+        // if(account_id.checkIfError()){
+        //     return "error";
+        // }else{
+        //     if (Transactions.class(amount)) {
                 
-            } else {
+        //     } else {
                 
-            }
-        }
+        //     }
+        // }
         return "transfer";
 
     }
