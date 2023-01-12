@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funds Transfer</title>
+</head>
+<body>
+    <h1>Funds Transfer</h1>
+    <form action="transfer" method="post">
+        <div>
+            <h2>From:</h2>
+            <select class="mdb-select" name="from" id="from">
+                <option th:each="name"></option>
+            </select>    
+        </div>
+        <div>
+            <h2>To:</h2>
+            <select class="mdb-select" name="to" id="to">
+                <option th:each="name"></option>
+            </select>    
+        </div>
+        <div class="form-outline">
+            <h2>Amount:</h2>
+            <input
+              type="text"
+              th:name="amount"
+              th:id="amount"
+              class="form-control"
+              th:field="*{amount}"
+              placeholder="Enter amount"
+            />
+          </div>
+          <div>
+            <h2>Comments:</h2>
+            <input type="text" placeholder="Type here"/>
+          </div>
+          <div class="form-outline">
+            <input type="text" placeholder="Error message print here">
+          </div><br />
+          <div class="form-outline">
+            <button type="submit" class="btn btn-warning btn-lg">Transfer</button>
+          </div>
+    </form>
+</body>
+</html>
